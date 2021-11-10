@@ -1,0 +1,26 @@
+<div class="lbody text-center d-block">
+  <div class="container">
+    <main class="form-signin">
+      <form>
+        <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
+        <hr>
+        <div class="form-floating">
+          <input type="text" class="form-control" name="user" [(ngModel)]="user" id="floatingInput"
+            placeholder="Ej: luis" />
+          <label for="floatingInput">Usuario</label>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <div class="container text-right">
+    <app-password (configItemsEvent)="configItems($event)"></app-password>
+  </div>
+  <div class="container mt-5">
+    <main class="form-signin">
+      <button class="w-100 btn btn-lg btn-primary" type="button" (click)="verifyCredentials()"
+        [disabled]="items.length < 3 || user == ''">Ingresar</button>
+      <p class="mt-4 mb-0 text-muted">&copy; 2021</p>
+    </main>
+  </div>
+</div>
